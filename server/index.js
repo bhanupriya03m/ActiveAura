@@ -35,13 +35,11 @@ app.get("/", async (req, res) => {
 const connectDB = () => {
   mongoose.set("strictQuery", true);
   mongoose
-    .connect(process.env.MONGODB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then((res) => console.log("Connected to MongoDB"))
+    .connect(process.env.MONGODB_URL)
+    .then(() => console.log("Connected to Mongo DB"))
     .catch((err) => {
-      console.error("Error connecting to MongoDB:", err.message);
+      console.error("failed to connect with mongo");
+      console.error(err);
     });
 };
 
