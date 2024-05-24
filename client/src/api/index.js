@@ -3,7 +3,7 @@
   import axios from "axios";
 
   const API = axios.create({
-    baseURL: "https://activeaura-3.onrender.com/api/",
+    baseURL: "http://localhost:3000//api/",
   });
   
   export const UserSignUp = async (data) => API.post("/user/signup", data);
